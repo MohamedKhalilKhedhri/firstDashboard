@@ -8,13 +8,13 @@ function NavBar() {
   return (
     <>
     <div className="navbar bg-base-100 fixed top-0 left-0 shadow-md z-50">
-        <div className="w-64 flex justify-center flex-1">
+        <div className="w-64 flex justify-center flex-1 lg:flex-none">
             <p className="text-2xl font-bold"><span className='text-primary'>Dash</span>Spark</p>
         </div>
         <div className="flex-none lg:hidden">
                 <label className="btn btn-circle swap swap-rotate" >
                     {/* this hidden checkbox controls the state */}
-                    <input type="checkbox" checked={navOpen} onChange={()=>NavState(!navOpen)}  />
+                    <input type="checkbox" checked={navOpen} onChange={()=>{NavState(!navOpen);setNState(false);}}  />
 
                     {/* hamburger icon */}
                     <svg
@@ -34,7 +34,7 @@ function NavBar() {
                     </svg>
                 </label>
             </div>
-            <div className="flex-none">
+            <div className="flex-none lg:hidden">
                 <button className="btn btn-square btn-ghost" onClick={()=>{NavState(false);setNState(!NState);}}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ function NavBar() {
                 </svg>
                 </button>
             </div>
-        <div className={`lg:flex-1 flex lg:p-0 py-9 px-1 lg:justify-between lg:static fixed top-0 left-0 h-screen lg:h-auto lg:flex-row flex-col w-64 lg:w-auto bg-base-100 lg:gap-0 gap-7 shadow-md lg:shadow-none  overflow-y-scroll overflow-x-hidden lg:overflow-visible ${NState ? "animate-slideOut" :  "-translate-x-full animate-slideIn"} transition-transform duration-300  lg:translate-x-0 lg:duration-0 lg:transition-none bg-base-100 `}>
+        <div className={`lg:flex-1 flex lg:p-0 py-9 px-1 lg:justify-between lg:static fixed top-16 left-0 h-screen lg:h-auto lg:flex-row flex-col w-64 lg:w-auto bg-base-100 lg:gap-0 gap-7 shadow-md lg:shadow-none  overflow-y-scroll overflow-x-hidden lg:overflow-visible ${NState ? "animate-slideOut" :  "-translate-x-full animate-slideIn"} transition-transform duration-300  lg:translate-x-0 lg:duration-0 lg:transition-none bg-base-100 `}>
             <div className=''>
                 <div className=''>
                         <label className="input input-bordered  flex items-center gap-2 rounded-2xl">

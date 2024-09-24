@@ -22,10 +22,10 @@ function Aside() {
     links[index].classList.add('active');
   };
 
-
+// i did the active link using localstorage well in react projects u can change it with usehistory and location
   return (
     <>
-      <div className={`w-64  py-8 ${navOpen ? "animate-slideOut" :  "-translate-x-full animate-slideIn"} transition-transform duration-300  lg:translate-x-0 lg:duration-0 lg:transition-none bg-base-100   shadow-md overflow-y-scroll overflow-x-hidden fixed  top-16 left-0 `} style={{height:"calc(100vh - 4rem)"}}>
+      <div className={`w-64 z-50  py-8 ${navOpen ? "animate-slideOut" :  "-translate-x-full animate-slideIn"} transition-transform duration-300  lg:translate-x-0 lg:duration-0 lg:transition-none bg-base-100   shadow-md overflow-y-scroll overflow-x-hidden fixed  top-16 left-0 `} style={{height:"calc(100vh - 4rem)"}}>
             <ul ref={linkListRef} className='menu gap-1'>
               <li className='h-12 flex items-center pl-4 relative '>
                 <a
