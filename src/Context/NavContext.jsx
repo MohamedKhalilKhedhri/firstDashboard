@@ -4,7 +4,7 @@ import React, { createContext, useState } from 'react'
 export const NavContext = createContext(null);
 
 function NavContextProvider({children}) {
-    const [navOpen,setNavState] = useState(false);
+    const [navOpen,setNavState] = useState(null);
     const  NavState=(s)=>{
         setNavState(s);
         console.log(navOpen);
